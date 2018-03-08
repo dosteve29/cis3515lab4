@@ -2,6 +2,7 @@ package edu.temple.cis3515lab4;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,8 +16,9 @@ public class PaletteActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_palette);
 
-        //set of colors
-        final String[] colors = {"MAGENTA", "WHITE", "GREEN", "RED", "BLUE", "YELLOW", "BLACK", "GRAY", "MAROON", "AQUA"};
+        Resources res = getResources();
+        final String[] colors = res.getStringArray(R.array.Colors);
+
 
         ColorAdapter colorAdapter = new ColorAdapter(this, colors);
 
